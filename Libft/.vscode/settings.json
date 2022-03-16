@@ -1,0 +1,10 @@
+{
+	"git.ignoreLimitWarning": true,
+	"C_Cpp.errorSquiggles": "Disabled",
+	"files.associations": {
+		"stdio.h": "c",
+		"algorithm": "c"
+	},
+	"c-cpp-compile-run.c-flags": "-Wall -Wextra -Werror",
+	"c-cpp-compile-run.cpp-flags": "-Wall -Wextra -Werror"
+}
