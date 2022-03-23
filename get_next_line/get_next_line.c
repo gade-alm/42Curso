@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:12:32 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/03/23 12:29:22 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/03/23 12:54:43 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,21 @@ char	*get_line(char *str)
 
 char	*get_next_line(int fd)
 {
-	int		i;
 	char	*next;
+	char	*str;
 
-	next = ft_strchr()
+	next = ft_strchr(str, '\n');
+	if (!next)
+		return (NULL);
+	get_line (next);
+	return (next);
 }
 
 int main(void)
 {
 	char	*str;
 
-	str = "teste \n teste2";
+	str = "teste \n abcde";
 	printf("%s", get_line(str));
 	printf("%s", get_line(str));
 }
