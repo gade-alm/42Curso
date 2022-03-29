@@ -6,54 +6,98 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:12:32 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/03/23 12:54:43 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/03/29 12:20:11 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "get_next_line.h"
+#include <fcntl.h>
 
-char	*get_line(char *str)
+int	ft_strlen(char *str)
 {
-	int		i;
-	char	*s;
+	int	i;
 
 	i = 0;
-	if (!str)
-		return (NULL);
-	while (str[i] != '\n')
-		i++;
-	s = (char *)malloc(sizeof(*s) * (i + 1));
-	if (!s)
-		return (NULL);
-	i = 0;
-	while (str[i] != '\n')
+	while (str[i])
 	{
-		s[i] = str[i];
+		if (str[i] == '\n')
+			return (i + 1);
 		i++;
 	}
-	if (str[i + 1] == '\n')
-		s[i] = '\0';
-	return (s);
+	return (i);
 }
+
+char	*get_line(char *line, char *buff)
+{
+	int		i;
+	int		j;
+	char	*temp;
+
+	i = 0;
+	temp = line;
+	line = (char *)malloc(sizeof(char) * ft_strlen(buff) + ft_strlen(line));
+	if (!line)
+		return (NULL);
+	while (temp && temp[i])
+	{
+		line[i] = temp[i];
+		i++;
+	}
+	j = 0;
+	while (buff[j])
+	{
+		if (buff[j++] == '\n')
+			break ;
+		line[i++] = buff [j];
+	}
+	if (temp)
+		free (temp);
+	return (line);
+}
+
+//Find the next line and save it on another string
+// char	*save_next(char *save)
+// {
+// 	int			i;
+// 	int			j;
+// 	char		*str;
+
+// 	i = 0;
+// 	j = 0;
+// 	if (!save)
+// 		return (NULL);
+// 	while (*save && save[i] != '\n')
+// 		i++;
+// 	i += 1;
+// 	str = malloc(sizeof(char *) * (i + 1));
+// 	if (!str)
+// 		return (NULL);
+// 	while (save[i] && str[j] != '\n')
+// 	{
+// 		str[j] = save[i];
+// 		i++;
+// 		j++;
+// 	}
+// 	str[j] = '\0';
+// 	return (str);
+// }
 
 char	*get_next_line(int fd)
 {
-	char	*next;
-	char	*str;
+	char		*line;
+	static char	buff[BUFFER_SIZE];
 
-	next = ft_strchr(str, '\n');
-	if (!next)
-		return (NULL);
-	get_line (next);
-	return (next);
+	read = ("text.txt", buff, BUFFER_SIZE);
+	return (line);
 }
-
-int main(void)
+int	main(void)
 {
-	char	*str;
+	char	*s;
 
-	str = "teste \n abcde";
-	printf("%s", get_line(str));
-	printf("%s", get_line(str));
+	s = "teste\nabc";
+	printf("save_next:\n");
+	printf("%s\n", save_next(s));
+	printf("get_line:\n");
+	printf("%s", get_line(s));
 }
