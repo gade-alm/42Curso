@@ -47,9 +47,9 @@ char	*get_line(char *line, char *buff)
 	j = 0;
 	while (buff[j])
 	{
+		line[i++] = buff [j];
 		if (buff[j++] == '\n')
 			break ;
-		line[i++] = buff [j];
 	}
 	if (temp)
 		free (temp);
