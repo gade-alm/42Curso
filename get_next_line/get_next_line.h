@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:30:33 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/03/29 10:27:14 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:35:50 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 char	*ft_strchr(const char *s, int c);
 char	*get_line(char *str);
-char	*save_next(char *save);
+char	*read_line(int fd, char *str);
+char	*save_next(char *str);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *str);
 
 #endif
