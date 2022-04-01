@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:30:45 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/03/30 12:18:07 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:41:46 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,55 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	a;
+	int	i;
 
-	a = 0;
-	while (str[a] != 0)
-		a++;
-	return (a);
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i] != 0)
+		i++;
+	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
+int	is_newline(char *str)
 {
-	char	*str;
-	int		a;
+	int	i;
 
-	a = 0;
-	str = (char *) s;
-	while (str[a] != (unsigned char)c)
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
 	{
-		if (str[a] == '\0')
-			return (NULL);
-		a++;
+		if (str[i] == '\n')
+			return (1);
+		i++;
 	}
-	return (&str[a]);
+	return (0);
+}
+
+char	*ft_get_line(char *line, char *buff)
+{
+	int		i;
+	int		j;
+	char	*temp;
+
+	i = 0;
+	j = 0;
+	temp = line;
+	line = malloc(sizeof(char *) * (ft_strlen(buff) + ft_strlen(line) + 1));
+	if (!line)
+		return (0);
+	while (temp && temp[i])
+	{
+		line[i] = temp[i];
+		i++;
+	}
+	while (buff[j])
+		line[i++] = buff[j++];
+	line[i] = '\0';
+	if (temp)
+		free (temp);
+	return (line);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
