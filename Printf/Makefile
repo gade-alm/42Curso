@@ -12,7 +12,7 @@
 
 NAME			= libftprintf.a
 
-SRCS			= 	ft_phex.c ft_ptr.c ft_putchar.c \
+SRCS			= 		ft_phex.c ft_ptr.c ft_putchar.c \
 					ft_putnbr_uns.c ft_putnbr.c ft_putstr.c \
 					ft_printf.c
 OBJS			= $(SRCS:.c=.o)
