@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:45:25 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/04/04 09:21:29 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/04/05 11:35:19 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,16 @@
 
 char	*get_next_line(int fd)
 {
-	static char		*buffer;
+	static char		buffer[BUFFER_SIZE + 1];
 	int				re;
 	char			*line;
-	int				i;
 
-	i = 1;
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (NULL);
-	re = 1;
-	while (i)
+	line = NULL;
+	while (1)
 	{		
+		re = 1;
 		if (!buffer[0])
 			re = read(fd, buffer, BUFFER_SIZE);
 		if (re > 0)
@@ -39,21 +35,17 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int	main(void)
-{
-	char	*line;
-	int		i;
-	int		fd1;
+// int	main(void)
+// {
+// 	int		fd;
+// 	char	*str;
 
-	fd1 = open("text", O_RDONLY);
-	i = 1;
-	while (i < 3)
-	{
-		line = get_next_line(fd1);
-		printf("line [%02d]: %s\n", i, line);
-		free(line);
-		i++;
-	}
-	close(fd1);
-	return (0);
-}
+// 	fd = open("text", O_RDONLY);
+// 	while(1)
+// 	{
+// 	str = get_next_line(fd);
+// 		if (!str)
+// 			break ;
+// 		printf("%s", str);
+// 	}
+// }
