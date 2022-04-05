@@ -3,24 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 12:30:45 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/04/01 15:41:46 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/04/04 14:28:36 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
 	i = 0;
 	if (!str)
 		return (0);
-	while (str[i] != 0)
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			return (i + 1);
 		i++;
+	}
 	return (i);
 }
 
@@ -31,11 +35,10 @@ int	is_newline(char *str)
 	i = 0;
 	if (!str)
 		return (0);
-	while (str[i])
+	while (str[i++])
 	{
 		if (str[i] == '\n')
 			return (1);
-		i++;
 	}
 	return (0);
 }
@@ -49,7 +52,7 @@ char	*ft_get_line(char *line, char *buff)
 	i = 0;
 	j = 0;
 	temp = line;
-	line = malloc(sizeof(char *) * (ft_strlen(buff) + ft_strlen(line) + 1));
+	line = malloc(sizeof(char) * (ft_strlen(buff) + ft_strlen(line) + 1));
 	if (!line)
 		return (0);
 	while (temp && temp[i])
