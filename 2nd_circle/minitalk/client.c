@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:05:33 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/23 17:20:59 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:38:10 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,37 @@
 #include <signal.h>
 #include <unistd.h>
 #include "minitalk.h"
+
+#include "minitalk.h"
+
+int	ft_atoi(const char *str)
+{
+	int			i;
+	int			signal;
+	long long	conv;
+
+	i = 0;
+	signal = 1;
+	conv = 0;
+	while (str[i] == 32 || (str[i] > 8 && str[i] < 14))
+		i++;
+	if (str [i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			signal *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		conv = (conv * 10 + (signal * (str[i] - '0')));
+			i++;
+		if (conv > 2147483647)
+			return (-1);
+		if (conv < -2147483648)
+			return (0);
+	}
+	return (conv);
+}
 
 void	char_to_binary(char c, int pid)
 {
@@ -63,17 +94,17 @@ void	signal_handler(char *str, int pid)
 
 int	main(int argc, char **argv)
 {
-	int	pid;
+	int		pid;
+	int		i;
+
 	(void)argc;
-	int	i;
-	
 	i = 0;
 	pid = ft_atoi(argv[1]);
 	while (argv[2][i])
-		{
-			char_to_binary(argv[2][i], pid);
+	{
+		char_to_binary(argv[2][i], pid);
 			i++;
-		}
+	}
 	while (1)
 	{
 		pause();

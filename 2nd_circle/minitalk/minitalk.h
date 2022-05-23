@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:08:53 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/23 17:20:29 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:09:38 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 # include <stdlib.h>
 # include <sys/types.h>
 
-void	    print_message(char *str);
+void	print_message(char *str);
 void	char_to_binary(char c, int pid);
-int         ft_atoi(const char *str);
+int		ft_atoi(const char *str);
+char	*message(char *str);
 
 #endif
