@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:48:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/23 18:40:29 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/05/25 18:51:41 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,27 @@
 #include <sys/types.h>
 #include "minitalk.h"
 
-// char	*message(char *str)
-// {
-// 	int		i;
-// 	int		j;
-// 	char	*ret;
+char	*handle_sigusr(int sig)
+{
+	static char	str[8];
+	int			i;
 
-// 	i = 0;
-// 	j = 0;
-// 	while (str[i])
-// 	{
-// 		while (j < 8)
-// 		{
-// 		ret[i] = print_message(str[i]);
-// 		j++;
-// 		}
-// 		j = 0;
-// 		i++;
-// 	}
-// 	printf ("%s\n", ret);
-// }
+	i = 0;
+	while (i < 8)
+	{
+		if (sig == SIGUSR1)
+		{
+		str[i] = '0';
+		i++;
+		}
+		else if (sig == SIGUSR2)
+		{
+		str[i] = '1';
+		i++;
+		}
+	}
+	return (str);
+}
 
 void	print_message(char *str)
 {
@@ -50,15 +51,6 @@ void	print_message(char *str)
 			n = n + binary[bits];
 		bits++;
 	}
-	printf ("%c", n);
-}
-
-void	handle_sigusr(int sig)
-{
-	if (sig == SIGUSR1)
-		write(1, "0", 1);
-	else if (sig == SIGUSR2)
-		write(1, "1", 1);
 }
 
 int	main(void)
