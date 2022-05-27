@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:48:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/27 12:30:35 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/05/27 22:29:04 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@
 
 void	handle_sigusr(int sig)
 {
-	static int	binary[9] = {128, 64, 32, 16, 8, 4, 2, 1};
+	static int	binary[8] = {128, 64, 32, 16, 8, 4, 2, 1};
 	static int	i = 0;
-	static int	sum;
+	static char	sum = 0;
 
 	if (sig == SIGUSR1)
 		i++;
@@ -47,6 +47,12 @@ void	handle_sigusr(int sig)
 	{
 		sum = sum + binary[i];
 		i++;
+	}
+	if (i == 8)
+	{
+		printf("%c", sum);
+		i = 0;
+		sum = 0;
 	}
 }
 

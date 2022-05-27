@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:05:33 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/26 18:10:07 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/05/27 22:22:43 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	signal_handler(char *str, int pid)
 	{
 		while (j >= 0)
 		{
-			if (((str[i] >> j) & 1) == '0')
+			if (((str[i] >> j) & 1) == 0)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
