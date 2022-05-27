@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:48:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/26 18:12:24 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/05/27 12:30:35 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,45 +15,38 @@
 #include <sys/types.h>
 #include "minitalk.h"
 
-void	print_message(char *str)
-{
-	static int	binary[8] = {128, 64, 32, 16, 8, 4, 2, 1};
-	int			n;
-	int			bits;
+// // void	print_message(char *str)
+// // {
+// // 	static int	binary[8] = {128, 64, 32, 16, 8, 4, 2, 1};
+// // 	int			n;
+// // 	int			bits;
 
-	bits = 0;
-	n = 0;
-	while (bits <= 7)
-	{
-		if (str[bits] != '0')
-		{
-			n += binary[bits];
-			bits++;
-		}
-		bits++;
-	}
-	printf("%c", n);
-}
+// // 	bits = 0;
+// // 	n = 0;
+// // 	while (bits <= 7)
+// // 	{
+// // 		if (str[bits] != '0')
+// // 		{
+// // 			n += binary[bits];
+// // 			bits++;
+// // 		}
+// // 		bits++;
+// // 	}
+// // 	printf("%c", n);
+// // }
 
 void	handle_sigusr(int sig)
 {
-	static char	str[8];
-	static int	i;
+	static int	binary[9] = {128, 64, 32, 16, 8, 4, 2, 1};
+	static int	i = 0;
+	static int	sum;
 
-	i = 0;
 	if (sig == SIGUSR1)
-	{
-		str[i] = '0';
 		i++;
-	}
-	else if (sig == SIGUSR2)
+	if (sig == SIGUSR2)
 	{
-		str[i++] = '1';
+		sum = sum + binary[i];
 		i++;
-	}
-	if (i == 8)
-	{
-		print_message(str);
 	}
 }
 

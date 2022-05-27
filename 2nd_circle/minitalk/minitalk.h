@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:08:53 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/26 18:12:25 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/05/27 12:25:06 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 void	print_message(char *str);
 void	char_to_binary(char c, int pid);
 int		ft_atoi(const char *str);
-char	*message(char *str);
+void	handle_sigusr(int sig);
+void	signal_handler(char *str, int pid);
 
 #endif
