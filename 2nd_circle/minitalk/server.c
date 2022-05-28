@@ -6,7 +6,7 @@
 /*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:48:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/27 22:29:04 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/05/28 13:43:22 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	handle_sigusr(int sig)
 		sum = sum + binary[i];
 		i++;
 	}
-	if (i == 8)
+	if (i >= 8)
 	{
-		printf("%c", sum);
+		write(1, &sum, 1);
 		i = 0;
 		sum = 0;
 	}
