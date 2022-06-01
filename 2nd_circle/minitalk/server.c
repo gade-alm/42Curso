@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:48:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/28 13:43:22 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/06/01 16:10:25 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,6 @@
 #include <sys/types.h>
 #include "minitalk.h"
 
-// // void	print_message(char *str)
-// // {
-// // 	static int	binary[8] = {128, 64, 32, 16, 8, 4, 2, 1};
-// // 	int			n;
-// // 	int			bits;
-
-// // 	bits = 0;
-// // 	n = 0;
-// // 	while (bits <= 7)
-// // 	{
-// // 		if (str[bits] != '0')
-// // 		{
-// // 			n += binary[bits];
-// // 			bits++;
-// // 		}
-// // 		bits++;
-// // 	}
-// // 	printf("%c", n);
-// // }
-
 void	handle_sigusr(int sig)
 {
 	static int	binary[8] = {128, 64, 32, 16, 8, 4, 2, 1};
@@ -42,7 +22,9 @@ void	handle_sigusr(int sig)
 	static char	sum = 0;
 
 	if (sig == SIGUSR1)
+	{
 		i++;
+	}
 	if (sig == SIGUSR2)
 	{
 		sum = sum + binary[i];

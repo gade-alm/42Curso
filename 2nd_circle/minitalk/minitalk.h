@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:08:53 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/27 12:25:06 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/01 16:24:23 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@
 # include <stdlib.h>
 # include <sys/types.h>
 
-void	print_message(char *str);
-void	char_to_binary(char c, int pid);
 int		ft_atoi(const char *str);
 void	handle_sigusr(int sig);
-void	signal_handler(char *str, int pid);
+void	char_to_binary(char c, int pid);
 
 #endif

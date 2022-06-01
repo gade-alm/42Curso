@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:05:33 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/05/27 22:22:43 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/06/01 16:29:53 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,11 @@ void	char_to_binary(char c, int pid)
 	char	signal;
 
 	signal = 0;
-	i = 7;
-	while (i >= 0)
-	{		
+	i = 8;
+	if (!c)
+		c = '\n';
+	while (--i >= 0)
+	{	
 		signal = ((c >> i & 1) + 48);
 		if (signal == '0')
 		{
@@ -66,29 +68,6 @@ void	char_to_binary(char c, int pid)
 			kill(pid, SIGUSR2);
 			usleep(100);
 		}
-		i--;
-	}
-}
-
-void	signal_handler(char *str, int pid)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 7;
-	while (str[i])
-	{
-		while (j >= 0)
-		{
-			if (((str[i] >> j) & 1) == 0)
-				kill(pid, SIGUSR1);
-			else
-				kill(pid, SIGUSR2);
-			j--;
-		}
-		j = 7;
-		i++;
 	}
 }
 
@@ -110,6 +89,8 @@ int	main(int argc, char **argv)
 		char_to_binary(argv[2][i], pid);
 			i++;
 	}
+	argv[2][i] = '\0';
+	char_to_binary(argv[2][i], pid);
 	while (1)
 	{
 		pause();
