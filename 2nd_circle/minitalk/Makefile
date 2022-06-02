@@ -6,7 +6,7 @@
 #    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 16:46:33 by gade-alm          #+#    #+#              #
-#    Updated: 2022/06/02 16:00:20 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/06/02 18:44:10 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,5 @@ all:
 
 clean:
 			$(RM) server client
-
-fclean:		clean
-			$(RM) server client
-
-re:			fclean all
 
 .PHONY:		all clean fclean re

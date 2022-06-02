@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:48:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/02 16:26:37 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/02 18:17:50 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,9 @@ void	handle_sigusr(int sig)
 	static char	sum = 0;
 
 	if (sig == SIGUSR1)
-	{
 		i++;
-	}
 	if (sig == SIGUSR2)
-	{
-		sum = sum + binary[i];
-		i++;
-	}
+		sum = sum + binary[i++];
 	if (i >= 8)
 	{
 		write(1, &sum, 1);
@@ -42,6 +37,7 @@ int	main(void)
 {
 	int		pid;
 
+	write (1, "PID: ", 5);
 	pid = getpid();
 	printf("%i\n", pid);
 	signal(SIGUSR1, handle_sigusr);

@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:05:33 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/02 16:46:05 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/02 18:19:11 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,9 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		printf("Wrong number of arguments!\n");
+		write(1, "Wrong number of arguments!\n", 28);
 		return (0);
 	}
-	if (argv[1])
-	(void)argc;
 	i = 0;
 	pid = ft_atoi(argv[1]);
 	while (argv[2][i])
