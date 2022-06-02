@@ -6,16 +6,14 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:05:33 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/01 16:53:47 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:46:05 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
-#include "minitalk.h"
-
-#include "minitalk.h"
+#include <signal.h>
 
 int	ft_atoi(const char *str)
 {
@@ -81,6 +79,7 @@ int	main(int argc, char **argv)
 		printf("Wrong number of arguments!\n");
 		return (0);
 	}
+	if (argv[1])
 	(void)argc;
 	i = 0;
 	pid = ft_atoi(argv[1]);
@@ -89,11 +88,6 @@ int	main(int argc, char **argv)
 		char_to_binary(argv[2][i], pid);
 			i++;
 	}
-	argv[2][i] = '\0';
 	char_to_binary(argv[2][i], pid);
-	while (1)
-	{
-		pause();
-	}
 	return (0);
 }

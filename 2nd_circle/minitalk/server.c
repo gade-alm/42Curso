@@ -6,14 +6,14 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:48:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/01 16:10:25 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:26:37 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 #include <sys/types.h>
-#include "minitalk.h"
+#include <signal.h>
 
 void	handle_sigusr(int sig)
 {
