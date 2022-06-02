@@ -10,28 +10,29 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= minitalk.a
-
 SRCS		= server.c client.c
 
 OBJS		= $(SRCS:.c=.o)
 
 CC			= gcc
+CFLAGS		= -Wall -Werror -Wextra
 RM 			= rm -f
-CFLAGS		= -Wall -Werror -Wextra 
 AR			= ar rcs
 
-all: $(NAME)
+all: server client
 
-$(NAME):	$(OBJS)
-			ar rcs $(NAME) $(OBJS)
+server: server.o
+	$(CC) -o server
+	
+client: client.o
+	$(CC) -o client
 
 clean:
 			$(RM) $(OBJS)
 
 fclean:		clean
-			$(RM)	$(NAME)
+			$(RM) server client
 
-re:			fclean $(NAME)
+re:			fclean all
 
 .PHONY:		all clean fclean re
