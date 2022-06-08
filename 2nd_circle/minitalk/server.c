@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:48:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/02 18:17:50 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:14:23 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,32 @@
 #include <sys/types.h>
 #include <signal.h>
 
+int	ft_putchar(char c)
+{
+	write (1, &c, 1);
+	return (1);
+}
+
+int	ft_putnbr(int n)
+{
+	int	i;
+
+	i = 0;
+	if (n >= 10)
+	{
+		i += ft_putnbr(n / 10);
+		i += ft_putnbr(n % 10);
+	}
+	else
+		i += ft_putchar(n + 48);
+	return (i);
+}
+
 void	handle_sigusr(int sig)
 {
-	static int	binary[8] = {128, 64, 32, 16, 8, 4, 2, 1};
-	static int	i = 0;
-	static char	sum = 0;
+	static int		binary[8] = {128, 64, 32, 16, 8, 4, 2, 1};
+	static int		i = 0;
+	static char		sum = 0;
 
 	if (sig == SIGUSR1)
 		i++;
@@ -35,11 +56,12 @@ void	handle_sigusr(int sig)
 
 int	main(void)
 {
-	int		pid;
+	int					pid;
 
 	write (1, "PID: ", 5);
 	pid = getpid();
-	printf("%i\n", pid);
+	ft_putnbr(pid);
+	write (1, "\n", 1);
 	signal(SIGUSR1, handle_sigusr);
 	signal(SIGUSR2, handle_sigusr);
 	while (1)

@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:05:33 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/02 18:19:11 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/08 19:08:23 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include <signal.h>
 #include <unistd.h>
 #include <signal.h>
+
+int	ft_isdigit(int arg)
+{
+	if (arg >= '0' && arg <= '9')
+		return (1);
+	return (0);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -74,13 +81,18 @@ int	main(int argc, char **argv)
 	int		pid;
 	int		i;
 
-	if (argc != 3)
-	{
-		write(1, "Wrong number of arguments!\n", 28);
-		return (0);
-	}
 	i = 0;
 	pid = ft_atoi(argv[1]);
+	if (!ft_isdigit(*argv[1]))
+	{
+		write (1, "\033[1;31mPlease insert numbers only!\n\033[0m", 35);
+		return (0);
+	}
+	if (argc != 3)
+	{
+		write(1, "\033[1;31mWrong number of arguments!\n\033[0m", 34);
+		return (0);
+	}
 	while (argv[2][i])
 	{
 		char_to_binary(argv[2][i], pid);
