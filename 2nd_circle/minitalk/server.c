@@ -6,13 +6,11 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:48:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/08 17:14:23 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:47:01 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-#include <sys/types.h>
 #include <signal.h>
 
 int	ft_putchar(char c)

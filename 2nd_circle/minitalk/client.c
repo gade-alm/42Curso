@@ -6,14 +6,12 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:05:33 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/08 19:08:23 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:46:32 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
-#include <signal.h>
 
 int	ft_isdigit(int arg)
 {
