@@ -6,7 +6,7 @@
 #    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 16:46:33 by gade-alm          #+#    #+#              #
-#    Updated: 2022/06/14 14:49:18 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/06/21 15:17:27 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,11 @@ client: client.o
 	$(CC) $(CFLAGS) client.o -o client
 
 clean:
-			$(RM) $(RMALL)
+			$(RM) $(OBJSSERVER) $(OBJSCLIENT)
+
+fclean:		clean
+			$(RM) server client
+
+re:			fclean $(all)
 
 .PHONY:		all clean 
