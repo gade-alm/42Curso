@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:05:33 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/14 14:47:30 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:50:10 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	main(int argc, char **argv)
 	pid = ft_atoi(argv[1]);
 	if (!ft_isdigit(*argv[1]))
 	{
-		write (1, "\033[1;31mPlease insert numbers only!\n\033[0m", 35);
+		write (1, "\033[1;31mPlease check if PID is numbers only\n\033[0m", 35);
 		return (0);
 	}
 	while (argv[2][i])
