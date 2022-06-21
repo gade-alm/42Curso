@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checkers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 15:30:43 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/21 15:32:32 by gade-alm         ###   ########.fr       */
+/*   Created: 2022/06/21 15:38:06 by gade-alm          #+#    #+#             */
+/*   Updated: 2022/06/21 15:46:51 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdio.h>
-# include <unistd.h>
+#include "push_swap.h"
 
-typedef struct s_list
+//create functions to check if there's any duplicate and if it's already sorted
+
+int	duplicate(t_list *num, char *arg)
 {
-	int				content;
-	struct s_list	*next;	
-}				t_list;
+	int	i;
 
-#endif
+	i = 0;
+	while (*num)
+	{	
+	}
+}
