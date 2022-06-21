@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 15:30:43 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/21 15:32:32 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:09:04 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 # include <stdio.h>
 # include <unistd.h>
 
-typedef struct s_list
+typedef struct node
 {
 	int				content;
-	struct s_list	*next;	
+	int				index;
+	struct node		*next;	
 }				t_list;
 
 #endif
