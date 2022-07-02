@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 15:30:43 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/22 16:11:17 by gabrieldeal      ###   ########.fr       */
+/*   Created: 2022/06/22 15:50:02 by gabrieldeal       #+#    #+#             */
+/*   Updated: 2022/06/24 16:29:14 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct node
+void	rotate_a(t_list **a)
 {
-	int				data;
-	int				index;
-	struct node*	next;	
-}				t_list;
 
-#endif
+}
+
+void 	rotate_b(t_list **b)
+{
+	
+}
+
+void	rotate_both(t_list **a, t_list **b)
+{
+	
+}
