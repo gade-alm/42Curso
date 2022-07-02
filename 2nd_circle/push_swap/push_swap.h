@@ -6,7 +6,7 @@
 /*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 15:30:43 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/06/22 16:11:17 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/07/02 17:37:05 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ typedef struct node
 	int				index;
 	struct node*	next;	
 }				t_list;
+
+int	ft_atoi(char *str);
 
 #endif
