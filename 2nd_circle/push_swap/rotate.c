@@ -3,24 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:50:02 by gabrieldeal       #+#    #+#             */
-/*   Updated: 2022/06/24 16:29:14 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/07/03 10:58:51 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	rotate_a(t_list **a)
 {
-
 }
 
-void 	rotate_b(t_list **b)
+void	rotate_b(t_list **b)
 {
-	
 }
 
 void	rotate_both(t_list **a, t_list **b)
 {
-	
 }

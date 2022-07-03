@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   swaps.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:50:05 by gabrieldeal       #+#    #+#             */
-/*   Updated: 2022/06/24 15:52:17 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/07/03 10:58:34 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //swap the first two members of the list A (1st list)
-void swap_a(t_list *a)
+void	swap_a(t_list *a)
 {
 	int	temp;
 
@@ -24,7 +24,7 @@ void swap_a(t_list *a)
 }
 
 //swap the first two members of the list B(2nd list)
-void swap_b(t_list *b)
+void	swap_b(t_list *b)
 {
 	int	temp;
 
@@ -35,10 +35,10 @@ void swap_b(t_list *b)
 }
 
 //swap the first two members of both lists A and B
-void swap_both(t_list *a, t_list *b)
+void	swap_both(t_list *a, t_list *b)
 {
 	int	atemp;
-	int btemp;
+	int	btemp;
 
 	atemp = a->data;
 	a->data = a->next->data;
