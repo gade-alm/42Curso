@@ -6,7 +6,7 @@
 #    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 16:46:33 by gade-alm          #+#    #+#              #
-#    Updated: 2022/06/21 15:17:27 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/07/25 09:59:30 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,20 +23,24 @@ CFLAGS		= -Wall -Werror -Wextra
 RM 			= rm -f
 RMALL       = $(OBJSSERVER) $(OBJSCLIENT) server client
 
-all:	server client
+AME		= minitalk
 
-server: server.o
-	$(CC) $(CFLAGS) server.o -o server
+$(NAME):	server client
 
-client: client.o
-	$(CC) $(CFLAGS) client.o -o client
+all:		$(NAME)
+
+server: 	server.o
+			$(CC) $(CFLAGS) server.o -o server
+
+client: 	client.o
+			$(CC) $(CFLAGS) client.o -o client
 
 clean:
-			$(RM) $(OBJSSERVER) $(OBJSCLIENT)
+		$(RM) $(OBJSSERVER) $(OBJSCLIENT)
 
 fclean:		clean
 			$(RM) server client
 
 re:			fclean $(all)
 
-.PHONY:		all clean 
+.PHONY:		all clean fclean re 
