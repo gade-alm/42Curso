@@ -6,7 +6,7 @@
 #    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 16:54:55 by gade-alm          #+#    #+#              #
-#    Updated: 2022/07/28 18:24:13 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/07/28 18:31:45 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ mlx_linux/mlx_Linux.a:
 	make -C mlx_linux
 
 clean: 
-	make clean -C mlx_linux
+	make clean -C mlx_linux $(OBJS)
 
 fclean: clean
 
