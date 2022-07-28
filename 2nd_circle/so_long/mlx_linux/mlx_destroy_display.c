@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   mlx_destroy_display.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 16:54:52 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/07/28 18:17:24 by gade-alm         ###   ########.fr       */
+/*   Created: 2020/10/03 18:56:35 by mg                #+#    #+#             */
+/*   Updated: 2020/10/04 01:55:35 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minilibx-linux/mlx.h"
+#include "mlx_int.h"
 
-int main(void)
+int	mlx_destroy_display(t_xvar *xvar)
 {
-	void *mlx;
-	
-	mlx = mlx_init();
-	mlx_new_window(mlx, 960, 480, "teste");
-	mlx_loop(mlx);
+	XCloseDisplay(xvar->display);
 }
